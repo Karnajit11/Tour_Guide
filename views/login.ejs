@@ -1,0 +1,12 @@
+<section class="login">
+    <div>  
+        <form action="/user/login" class="log-box" method="POST">
+            <h1>Sign In</h1>
+            <%- include ('partials/messages') %>    
+            <input type="email" placeholder="Enter your email" id="email">
+            <input type="password" placeholder="Enter Password" id="password">
+            <input type="submit" value="Log In">
+            <h5>Create an account?<a href="/user/register">Register</a></h5>
+        </form>
+    </div>
+</section>
