@@ -1,0 +1,347 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+}
+
+.blr{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    
+}
+
+.logo{
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 22px;
+    font-weight: bold;
+
+}
+
+.nav-list{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+
+}
+.nav-list li{
+    list-style: none;
+}
+
+.nav-list a{
+    color: aliceblue;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    height: 3px;
+    width: 30px;
+    background-color: aliceblue;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/*============ Responsive ===============*/
+
+@media screen and (max-width: 1300px){
+    .nav-list{
+        width: 57%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .nav-list{
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-list{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgba(128,128,128,0.7);
+        border-radius:20% 0 0 30% ;
+        width: 35%;
+        transform: translateX(100%);
+        transition:transform 0.5s ease-in;
+    }
+    .nav-list li{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+/*=========== Burger Animation =====*/
+
+@keyframes navListFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+}
+
+.toggle .line-1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line-2{
+    opacity: 0;
+}
+
+.toggle .line-3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+.banner-content{
+    text-align: center;
+    margin-top: 200px;
+   
+}
+
+.banner-content h3{
+    color: aliceblue;
+    font-size: 30px;
+    font-family: 'Finger Paint', cursive;
+    letter-spacing: 4px;
+    font-weight: bold;
+
+}
+
+.banner-content .button{
+    margin: 50px  40px;
+   
+
+}
+
+.banner-content a{
+    color: aliceblue;
+    text-decoration: none;
+    font: 14px;
+    padding: 10px 20px;
+    border: 2px solid #9399ff;
+    margin: 20px;
+}
+
+.banner-content a::after{
+    content: '';
+    display: inline-block;
+}
+.banner-content a:hover{
+    background-color: #126c7e;
+}
+
+/*===========Famous- Places Section================*/
+.wrap{
+    background-color: #e1f2fb;
+    padding: 10px;
+}
+.wrap-text{
+    text-align: center;
+
+}
+
+.wrap-text h2{
+    font-size: 30px;
+    font-family: 'Finger Paint', cursive;
+    padding-top: 50px ;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+
+}
+
+
+.famous-places{
+    
+    padding: 50px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 50px; 
+
+}
+
+.places{
+    height: 55vh;
+    position: relative;
+    cursor: pointer;  
+
+}
+.places:hover .place-text{
+    height: 55vh;
+}
+
+.places img{
+    width: 100%;
+    height: 55vh;
+
+}
+
+.places .place-text{
+    width: 100%;
+    height: 0;
+    position: absolute;
+    background: rgba(103, 58, 183, 0.67);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.7s ease;
+}
+
+.places .place-text h4{
+    color: aliceblue;
+    font-size: 30px;
+    border: 5px solid white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.places .place-text p{
+    color: white;
+    padding: 0px 10px 10px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 70px;
+}
+
+.places .place-text a{
+    color:white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 30px;
+    background-color:rgb(38, 155, 155)	;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/*================ Footer ======================*/
+
+.footer{
+    height: 25vh;
+    background-color: rgb(6, 21, 36);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .top-footer h1{
+    padding: 30px;
+    color: mistyrose;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.footer .bottom-footer p{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+
+/*========== sign Up==========*/
+.sign-in{
+    width: 100%;
+    height: 100vh;
+    background-color: #126c7e;
+   
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;;
+}
+.button{
+    display: flex;
+    justify-content: center;
+
+    margin: 10px auto;
+   
+
+}
+.sign-in .user{
+    margin: 20px auto;
+}
+
+.sign-in .user label{
+    padding:0px 20px; 
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.sign-in .user input{
+    padding: 5px 20px;
+}
+
+.sign-in .pass label{
+    padding:0px 20px; 
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.sign-in .pass input{
+    padding: 5px 20px;
+}
+
+.button a{
+    text-decoration: none;
+    color: aliceblue;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    font-size: 18px;
+   
+}
